@@ -466,13 +466,30 @@ loadIncome();
 </p>
 
 <script>
-document.addEventListener("contextmenu", e => e.preventDefault());
+// Disable right click
+document.addEventListener("contextmenu", function(e){
+e.preventDefault();
+});
 
+// Disable keys
 document.onkeydown = function(e){
-if(e.keyCode == 123) return false; // F12
-if(e.ctrlKey && e.shiftKey && e.keyCode == 73) return false; // Ctrl+Shift+I
-if(e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
-}
+
+// F12
+if(e.key === "F12") return false;
+
+// Ctrl+Shift+I
+if(e.ctrlKey && e.shiftKey && e.key === "I") return false;
+
+// Ctrl+Shift+J
+if(e.ctrlKey && e.shiftKey && e.key === "J") return false;
+
+// Ctrl+U
+if(e.ctrlKey && e.key === "u") return false;
+
+// Ctrl+S
+if(e.ctrlKey && e.key === "s") return false;
+
+};
 </script>
 
 </body>
