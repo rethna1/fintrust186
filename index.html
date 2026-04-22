@@ -492,5 +492,70 @@ if(e.ctrlKey && e.key === "s") return false;
 };
 </script>
 
+<!-- Scroll to Top Button (Off-white + Black Icon) -->
+<style>
+#scrollTopBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 25px;
+  width: 55px;
+  height: 55px;
+  background-color: #f8f8f8; /* Off-white */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollTopBtn svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #000000; /* BLACK arrow */
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#scrollTopBtn:hover {
+  background-color: #e8e8e8;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+</style>
+
+<button onclick="topFunction()" id="scrollTopBtn" title="Go to top">
+  <svg viewBox="0 0 24 24">
+    <path d="M6 15l6-6 6 6" />
+  </svg>
+</button>
+
+<script>
+window.onscroll = function() {
+  let btn = document.getElementById("scrollTopBtn");
+  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+    btn.classList.add("show");
+  } else {
+    btn.classList.remove("show");
+  }
+};
+
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
 </body>
 </html>
+
