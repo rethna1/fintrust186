@@ -75,18 +75,6 @@ border:none;
 border-radius:5px;
 }
 
-.btn-row{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-margin-top:10px;
-}
-
-.btn-row .small-btn{
-flex:1;
-text-align:center;
-}
-
 .delete{
 background:#e74c3c;
 }
@@ -149,12 +137,6 @@ background:#25D366;
     margin:0;
     color:#2c3e50;
     font-weight:600;
-}
-
-.btn-row .small-btn{
-flex:1;
-padding:8px;
-font-size:14px;
 }
 
 </style>
@@ -282,12 +264,11 @@ ${s.download ? `<b>Download / Print Steps:</b>\n${s.download}\n` : ""}
 
 ${s.note ? `<b>Note:</b>\n${s.note}\n` : ""}
 
-<div class="btn-row">
 <button class="small-btn" onclick="addIncome(${s.charge || 0})">Add ₹</button>
 <button class="small-btn" onclick="loadEdit(${i})">Edit</button>
 <button class="small-btn delete" onclick="deleteService(${i})">Delete</button>
-</div>
 
+</div>
 `;
 }
 });
@@ -577,4 +558,3 @@ function topFunction() {
 
 </body>
 </html>
-
